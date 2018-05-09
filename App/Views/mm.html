@@ -1,0 +1,82 @@
+<?php
+namespace System;
+class Loader
+{
+    private $app;
+    private $models = [];
+
+
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+}
+
+/**
+*
+* @param $model
+* @param $method
+* @param array $arguments
+*/
+public function action($model, $method,array $arguments)
+{
+$object = $this->model($model);
+return call_user_func_array([$object,$method],$arguments);
+}
+/**
+* call the given model
+* @param $model
+* @return mixed
+*/
+public function model($model)
+{
+$model = $this->getmodelName($model);
+
+if(! $this->hasmodel($model)) {
+$this->addmodel($model);
+}
+return $this->getmodel($model);
+}
+/**
+* if the given class model exists
+* @param $model
+* @return mixed
+*/
+private function hasmodel($model)
+{
+return array_key_exists($model,$this->models);
+}
+
+/**
+* add new model
+* @param $model
+* @return mixed
+*/
+private function addmodel($model)
+{
+$object = new $model($this->app);
+
+return $this->models[$model] = $object;
+}
+
+/**
+* return get the model
+* @param $model
+* @return mixed
+*/
+private  function getmodel($model)
+{
+return $this->models[$model];
+}
+
+/**
+* get model name
+* @param $model
+* @return string
+*/
+private function getmodelName($model)
+{
+$model .='model';
+$model = 'App\\models\\'.$model;
+return str_replace('/','\\',$model);
+}
+}

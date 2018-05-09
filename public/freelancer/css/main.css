@@ -1,0 +1,261 @@
+body
+{
+    background-color:#F0F0F0 !important;
+    font-family:Oswald;
+    width: 100%;
+
+
+}
+
+.navbar
+{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+.navbar-right
+{
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+.navbar-nav>li>a
+{
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: white;
+    line-height: 30px;
+}
+.navbar-nav>li>a:hover ,
+.navbar-nav>li>a :active
+{
+    background: none;
+}
+.navbar-brand
+{
+    line-height: 34px;
+    font-size:30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+    color: white;
+}
+
+.header
+{
+
+    background: url('../img/startup-photos.jpg')no-repeat top center;
+    background-size: cover;
+    color: white;
+
+
+}
+
+
+.overlay
+{
+     background: rgba(0,0,0,0.3);
+    min-width: 100%;
+
+     min-height: 100vh;
+
+}
+.info
+{
+
+}
+.header span
+{
+    color:orange;
+}
+.centring-vh
+{
+    margin-top: 25vh;
+}
+
+.header h1
+{
+    font-weight: bold;
+    font-size: 60px;
+    font-family: "Open Sans";
+    color: white;
+
+}
+.header h1~.lead
+{
+    font-size: 25px;
+    color: white;
+    font-family: "Open Sans";
+
+}
+
+.header h1~.lead:after
+{
+    content: "";
+    display: block;
+    width:70px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+
+.btn-primary
+{
+    margin-top: 20px;
+
+    padding: 15px;
+}
+.navbar-toggle
+{
+    background:black;
+}
+.navbar-toggle .icon-bar
+{
+    background: white;
+}
+.header form{
+    width: 360px;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+
+
+}
+.header  .login
+{
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+.header .sign-up
+{
+    margin-bottom: 20px;
+}
+
+.header form h2
+{
+    color:black;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 0;
+    background: #f5f5f5;
+}
+.header form span
+{
+    color: orange;
+}
+.header form .form-control
+{
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0;
+    width: 80%;
+    margin: 0 auto 10px;
+}
+
+.header form .btn
+{
+    background: orange;
+    color: white;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 10px;
+}
+
+
+
+.dropper-dropzone
+{
+    padding: 80px !important;
+}
+.dropper img
+{
+    position: absolute;
+
+}
+/** start warring class in navbar**/
+.navbar-inverse .navbar-nav>li.warning1
+{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.navbar-inverse .navbar-nav>li>a.warning
+{
+    color:white;
+    line-height: 35px;
+    padding: 35px;
+}
+.navbar-inverse .navbar-nav>li>a.warning:hover
+{
+    color:white;
+    background: #f77d0e;
+}
+.warning
+{
+    display: inline-block;
+    padding-top: 5px !important;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: #f77d0e;
+    width: 200px;
+    height: 34px;
+
+}
+
+
+.page--freelancer-form .side
+{
+    background: white;
+    height: 100%;
+    box-shadow: 1px 4px 1px #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.container .page--jobs-form
+{
+    margin-top: 30px;
+}
+
+.footer__wrapper {
+    margin-top: 30px;
+    background-color: #3e3c40;
+    padding-top: 42px;
+    padding-bottom: 28px;
+}
+.page--freelancer-form
+{
+    padding-top: 100px;
+}
+.freelancer-list-page {
+    background: white;
+    height: 100%;
+    box-shadow: 1px 4px 1px #ccc;
+    border-radius: 5px;
+    padding-right: 20px;
+}
+.freelancer-list-page h3.info-box__header {
+    padding-top: 20px;
+    margin-left: 20px;
+}
+.freelancer-list-page img.img-thumbnail.img-circle.media-object {
+    margin-left: 20px;
+    margin-top: 10px;
+}

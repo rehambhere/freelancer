@@ -1,0 +1,104 @@
+<?php
+namespace App\Controllers\Admin;
+
+use System\Controller;
+
+class CategoriesController extends Controller
+{
+    /**
+     * Display Categories List
+     */
+    public function index()
+    {
+        $this->html->setTitle('Categories');
+$data['categories'] = $this->load->model('Categories')->all();
+$data['success'] = $this->session->has('success')?$this->session->pull('success'):null;
+
+$view = $this->view->render('admin/categories/list',$data);
+
+return  $this->adminLayout->render($view);
+}
+
+/**
+* open categories form
+*/
+public function add()
+{
+$data['action'] = $this->url->link('/admin/categories/submit');
+
+return $this->view->render('/admin/categories/form', $data);
+}
+
+/**
+* display Edit form
+*/
+public function edit($id)
+{
+$categoriesModel = $this->load->model('Categories');
+if( ! $categoriesModel->exists($id)) {
+return $this->url->redirectTo('/404');
+}
+$data['category'] = $categoriesModel->get($id);
+//$data['error'] = $this->session->has('error')?$this->session->pull('error'):null;
+// $this->html->setTitle('Update ' .$data['category']->name);
+//$view= $this->view->render('admin/categories/update-form', $data);
+$view =$this->view->render('/admin/categories/form', $data);
+
+return $this->adminLayout->render($view);
+
+}
+
+
+/**
+* submit for creating new category
+*/
+public function submit()
+{
+$json = [];
+if($this->isValid()){
+//its mean there are no errors
+
+$this->load->model('Categories')->create();
+
+$json['success'] = 'Category has been created successful';
+
+$json['redirectTo'] = $this->url->link('/admin/categories');
+} else {
+//its mean there are  errors
+$json['errors'] = $this->validator->flattenMessages();
+
+}
+return $this->json($json);
+}
+
+/**
+* validate form
+*/
+public function save($id)
+{
+if($this->isValid()){
+//its mean there are no errors
+
+$this->load->model('Categories')->update($id);
+$this->session->set('success', 'Category has been created successful');
+return $this->url->redirectTo('/admin/categories');
+} else {
+//its mean there are  errors
+$this->session->set('error',$this->validator->getMessages());
+return  $this->url->redirectTo('admin/categories/edit/'.$id);
+
+}
+
+}
+
+/**
+* validate this form
+*/
+private function isValid()
+{
+$this->validator->required('name','Category Name its Required');
+return $this->validator->passes();
+}
+
+
+}

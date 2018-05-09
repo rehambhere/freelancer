@@ -1,0 +1,7 @@
+// this is foreing key
+ALTER TABLE jobs
+ADD CONSTRAINT j_1
+FOREIGN KEY(user_id)
+REFERENCES users(id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
